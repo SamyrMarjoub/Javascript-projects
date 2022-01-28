@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Validação de Formulário</title>
+  <link rel="stylesheet" href="ValidarFormulario.css">
+</head>
+
+<body>
+
+  <section class="container">
+    <h1>Formulário</h1>
+    <form action="" method="">
+
+      <label for="input-nome">Nome:</label>
+      <input type="text" id='input-nome' maxlength="15">
+      <ul class='lista ul1'>
+        <li>O 'nome' não pode estar vazio!</li>
+      </ul>
+      <label for="input-sobrenome">Sobrenome:</label>
+      <input type="text" id='input-sobrenome' maxlength="15">
+      <ul class='lista ul2'>
+        <li>Campo 'Sobrenome' não pode estar vazio</li>
+      </ul>
+      <label for="input-cpf">CPF:</label>
+      <input type="text" id='input-cpf' maxlength="11">
+      <ul class='lista ul3'>
+        <li>Digite um CPF válido</li>
+      </ul>
+      <label for="input-usuario">Usuário:</label>
+      <input type="text" id='input-usuario' maxlength="12">
+      <ul class='lista ul4'>
+        <li>Usúario invalido</li>
+      </ul>
+      <ul class='lista ul4-5'>
+        <li>Campo 'Usúario não pode estar vazio</li>
+      </ul>
+
+      <label for="input-senha">Senha:</label>
+      <input type="password" id='input-senha' maxlength="12">
+      <ul class='lista ul5'>
+        <li>O campo 'Senha' não pode estar vazio</li>
+      </ul>
+      <ul class='lista ul5-5'>
+        <li>Senha entre 6 e 12 caracteres</li>
+      </ul>
+      <ul class='lista ul5-6'>
+        <li>O campo 'Senha' e 'Confirmar senha' Devem ser iguais</li>
+      </ul>
+      <label for="input-senhaconfirmar">Repetir senha:</label>
+      <input type="password" id='input-senhaconfirmar' maxlength="12">
+      <ul class='ul6 lista'>
+        <li>Campo 'Repetir senha' não pode estar vazio</li>
+      </ul>
+      <ul class='lista ul6-6'>
+        <li>As senhas devem ser iguais!</li>
+      </ul>
+      <button id='butao'>Enviar</button>
+
+    </form>
+  </section>
+
+  <script src="ValidarFormulario.js"></script>
+</body>
+
+</html>
