@@ -107,9 +107,7 @@ function ChecarCondicao() {
     }
     alerta();
 }
-//function sequencia() {
-//return cpf.charAt(0).repeat(11) === cpf;
-//}
+
 function operacao1() {
     const arraycpf = Array.from(cpf.value).slice(0, -2)
     let contador = arraycpf.length + 1
