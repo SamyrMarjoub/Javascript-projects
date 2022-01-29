@@ -15,62 +15,99 @@ const senha = document.querySelector('#input-senha')
 const usuario = document.querySelector('#input-usuario')
 const confirmarsenha = document.querySelector('#input-senhaconfirmar')
 const butao = document.querySelector('#butao')
-
+let condicao = true
 function ChecarCondicao() {
     if (nome.value.length === 0) {
         ul.style.display = 'block'
+        condicao = false
     } else {
         ul.style.display = 'none'
+        condicao = true
     }
     if (sobrenome.value.length === 0) {
         ul2.style.display = 'block'
+        condicao = false
+
     } else {
         ul2.style.display = 'none'
+        condicao = true
+
     }
     if (!validacaocpf()) {
         ul3.style.display = 'block'
+        condicao = false
+
     } else {
         ul3.style.display = 'none'
+        condicao = true
+
     }
     if (usuario.value.length < 6) {
         ul4.style.display = 'block'
+        condicao = false
+
     } else {
         ul4.style.display = 'none'
+        condicao = true
+
     }
     if (usuario.value.length === 0) {
         ul45.style.display = 'block'
+        condicao = false
+
     } else {
         ul45.style.display = 'none'
+        condicao = true
+
     }
     if (senha.value.length < 6) {
         ul55.style.display = 'block'
+        condicao = false
+
     } else {
         ul55.style.display = 'none'
+        condicao = true
+
     }
     if (senha.value.length === 0) {
         ul5.style.display = 'block'
+        condicao = false
+
     } else {
         ul5.style.display = 'none'
+        condicao = true
+
     }
     if (senha.value !== confirmarsenha.value) {
         ul56.style.display = 'block'
+        condicao = false
+
     } else {
         ul56.style.display = 'none'
+        condicao = true
+
     }
     if (confirmarsenha.value !== senha.value) {
         ul66.style.display = 'block'
+        condicao = false
+
     } else {
         ul66.style.display = 'none'
+        condicao = true
+
     }
     if (confirmarsenha.value.length === 0) {
         ul6.style.display = 'block'
+        condicao = false
+
     } else {
         ul6.style.display = 'none'
+        condicao = true
+
     }
+    alerta();
 }
-//function sequencia() {
-//return cpf.charAt(0).repeat(11) === cpf;
-//}
+
 function operacao1() {
     const arraycpf = Array.from(cpf.value).slice(0, -2)
     let contador = arraycpf.length + 1
@@ -104,7 +141,10 @@ function operacao2() {
 function validacaocpf() {
     if (cpf.value[9] === operacao1() && cpf.value[10] === operacao2()) return true
     if (cpf.value.length !== 11) return false
-    console.log(operacao1())
+
+}
+function alerta() {
+    if (condicao) alert('Formulário enviado')
 }
 function iniciar() {
     ChecarCondicao();
@@ -115,7 +155,7 @@ butao.addEventListener('click', function (e) {
 })
 document.addEventListener('keypress', function (e) {
     if (e.keyCode === 13) {
+        e.preventDefault()
         iniciar()
-        e.preventDefault();
     }
 })
